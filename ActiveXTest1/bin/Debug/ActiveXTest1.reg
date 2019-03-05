@@ -1,0 +1,91 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\ActiveXTest1.BarCodeInfo]
+@="ActiveXTest1.BarCodeInfo"
+
+[HKEY_CLASSES_ROOT\ActiveXTest1.BarCodeInfo\CLSID]
+@="{03E2CBCD-B71F-392C-99F5-6F104326258F}"
+
+[HKEY_CLASSES_ROOT\CLSID\{03E2CBCD-B71F-392C-99F5-6F104326258F}]
+@="ActiveXTest1.BarCodeInfo"
+
+[HKEY_CLASSES_ROOT\CLSID\{03E2CBCD-B71F-392C-99F5-6F104326258F}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="ActiveXTest1.BarCodeInfo"
+"Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{03E2CBCD-B71F-392C-99F5-6F104326258F}\InprocServer32\1.0.0.0]
+"Class"="ActiveXTest1.BarCodeInfo"
+"Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{03E2CBCD-B71F-392C-99F5-6F104326258F}\ProgId]
+@="ActiveXTest1.BarCodeInfo"
+
+[HKEY_CLASSES_ROOT\CLSID\{03E2CBCD-B71F-392C-99F5-6F104326258F}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CLASSES_ROOT\ActiveXTest1.C_Code128]
+@="ActiveXTest1.C_Code128"
+
+[HKEY_CLASSES_ROOT\ActiveXTest1.C_Code128\CLSID]
+@="{697A3566-77DF-3158-A0F4-19640386BE5A}"
+
+[HKEY_CLASSES_ROOT\CLSID\{697A3566-77DF-3158-A0F4-19640386BE5A}]
+@="ActiveXTest1.C_Code128"
+
+[HKEY_CLASSES_ROOT\CLSID\{697A3566-77DF-3158-A0F4-19640386BE5A}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="ActiveXTest1.C_Code128"
+"Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{697A3566-77DF-3158-A0F4-19640386BE5A}\InprocServer32\1.0.0.0]
+"Class"="ActiveXTest1.C_Code128"
+"Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{697A3566-77DF-3158-A0F4-19640386BE5A}\ProgId]
+@="ActiveXTest1.C_Code128"
+
+[HKEY_CLASSES_ROOT\CLSID\{697A3566-77DF-3158-A0F4-19640386BE5A}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CLASSES_ROOT\ActiveXTest1.Uc]
+@="ActiveXTest1.Uc"
+
+[HKEY_CLASSES_ROOT\ActiveXTest1.Uc\CLSID]
+@="{073A987E-2A7C-4874-8BEE-321E04F4E84E}"
+
+[HKEY_CLASSES_ROOT\CLSID\{073A987E-2A7C-4874-8BEE-321E04F4E84E}]
+@="ActiveXTest1.Uc"
+
+[HKEY_CLASSES_ROOT\CLSID\{073A987E-2A7C-4874-8BEE-321E04F4E84E}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="ActiveXTest1.Uc"
+"Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{073A987E-2A7C-4874-8BEE-321E04F4E84E}\InprocServer32\1.0.0.0]
+"Class"="ActiveXTest1.Uc"
+"Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{073A987E-2A7C-4874-8BEE-321E04F4E84E}\ProgId]
+@="ActiveXTest1.Uc"
+
+[HKEY_CLASSES_ROOT\CLSID\{073A987E-2A7C-4874-8BEE-321E04F4E84E}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CLASSES_ROOT\Record\{18D3E248-75EC-3DAF-9CA8-3BABE4F96DC6}\1.0.0.0]
+"Class"="ActiveXTest1.C_Code128+Encode"
+"Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"

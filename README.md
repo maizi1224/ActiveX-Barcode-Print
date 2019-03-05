@@ -5,7 +5,7 @@
 
 1.在电脑D盘根目录下创建nykjprint文件夹将PrintSet.xml 放入文件夹内并修改需要调用的打印机名称
 
-2.生成安装step.exe 
+2.安装生成的step.exe 
 
 3.前端调用
 example：

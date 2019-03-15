@@ -54,6 +54,7 @@
     <Compile Include="BarCodeInfo.cs" />
     <Compile Include="BarcodeOperate.cs" />
     <Compile Include="C_Code128.cs" />
+    <Compile Include="Extend.cs" />
     <Compile Include="InterfaceTypeAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

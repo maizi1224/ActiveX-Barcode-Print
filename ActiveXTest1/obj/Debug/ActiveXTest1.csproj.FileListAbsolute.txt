@@ -18,3 +18,4 @@ D:\Desktop\GitClone\ActiveX-Print\ActiveXTest1\obj\Debug\ActiveXTest1.dll
 D:\Desktop\GitClone\ActiveX-Print\ActiveXTest1\obj\Debug\ActiveXTest1.pdb
 D:\Desktop\GitClone\ActiveX-Print\ActiveXTest1\bin\Debug\ActiveXTest1.tlb
 D:\Desktop\GitClone\ActiveX-Print\ActiveXTest1\bin\Debug\Newtonsoft.Json.pdb
+D:\Desktop\GitClone\ActiveX-Print\ActiveXTest1\obj\Debug\ActiveXTest1.csprojResolveAssemblyReference.cache

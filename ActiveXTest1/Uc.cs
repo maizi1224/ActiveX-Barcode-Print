@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.Data;
 using System.Linq;
 using System.Xml.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace ActiveXTest1
 {
@@ -20,38 +21,53 @@ namespace ActiveXTest1
         /// 打印文档的对象
         /// </summary>
         private PrintDocument m_printDoc = null;
-        private float m_pageWidth = 50F;//纸张宽度 mm单位
-        private float m_pageHeight = 30F;//纸张高度 mm单位
-        private BarCodeInfo SaveData = null;//打印的数据
+        private JObject jsondata = null;
+        private JObject jsonset = null;
         public Uc()
         {
-            XDocument document = XDocument.Load(@"D:\nykjprint\PrintSet.xml");
-            XElement root = document.Root;
+            
+
             InitializeComponent();
             
-            m_printDoc = new PrintDocument();//实例打印文档对象
-            //自定义纸张大小
-            m_printDoc.DefaultPageSettings.PaperSize = new PaperSize("newPage70X40"
-           , (int)(m_pageWidth / 25.4 * 100)
-           , (int)(m_pageHeight / 25.4 * 100));
-            MessageBox.Show(root.Value);
-            m_printDoc.PrinterSettings.PrinterName = root.Value;
-            //自定义图片内容整体上间距/左间距
-            m_printDoc.OriginAtMargins = true;
-            m_printDoc.DefaultPageSettings.Margins.Top = (int)(2 / 25.4 * 100);
-            m_printDoc.DefaultPageSettings.Margins.Left = (int)(2 / 25.4 * 100);
+
             //打印事件
             m_printDoc.PrintPage += new PrintPageEventHandler(m_printDoc_PrintPage);
             m_printDoc.EndPrint += new PrintEventHandler(m_printDoc_EndPrintPage);
-
-           
+            m_printDoc.BeginPrint += M_printDoc_BeginPrint;
     }
+
+
+
+        private void M_printDoc_BeginPrint(object sender, PrintEventArgs e)
+        {
+            string jsonfile = System.Environment.CurrentDirectory + "//BarCodeModule.json";
+            using (System.IO.StreamReader file = System.IO.File.OpenText(jsonfile))
+            {
+
+                using (JsonTextReader reader = new JsonTextReader(file))
+                {
+
+                    jsonset = (JObject)JToken.ReadFrom(reader);
+
+                }
+            }
+
+            m_printDoc = new PrintDocument();//实例打印文档对象
+            //自定义纸张大小
+            m_printDoc.DefaultPageSettings.PaperSize = new PaperSize(jsonset["pagename"].ToString()
+           , (int)(jsonset["width"].Toint() / 25.4 * 100)
+           , (int)(jsonset["height"].Toint() / 25.4 * 100));
+            m_printDoc.PrinterSettings.PrinterName = jsonset["printname"].ToString();
+            //自定义图片内容整体上间距/左间距
+            m_printDoc.OriginAtMargins = true;
+            m_printDoc.DefaultPageSettings.Margins.Top = 0;
+            m_printDoc.DefaultPageSettings.Margins.Left = 0;
+        }
 
         private void m_printDoc_EndPrintPage(object sender, PrintEventArgs e)
         {
-             SaveData = null;           
+            jsondata = null;           
         }
-
 
 
         /// <summary>
@@ -59,59 +75,30 @@ namespace ActiveXTest1
         /// </summary>
         private void m_printDoc_PrintPage(object sender, PrintPageEventArgs e)
         {
-            var MyBarcode = new BarcodeOperate();
-            if (SaveData == null) return;
-            BarCodeInfo barcode = SaveData;
-            //条码第一行文本信息
-            StringBuilder sb = new StringBuilder();
-            sb.Append(barcode.PATNAME + "  " + barcode.PATSEX + "  " + barcode.PATAGE + "  " + barcode.SPLITTYPENAME);
-            //创建第一行文本信息
-            e.Graphics.DrawString(sb.ToString(), new Font("宋体", 10), Brushes.Black, 2, 2);
-            //绘制条码图案
+
+
+            JObject jobject = jsonset;
+            foreach (var item in jsondata)
+            {
+                try
+                {
+                    JToken jo2 = jobject["parameter"][item.Key];
+                    if (jo2 != null)
+                    {
+                        e.Graphics.DrawString(item.Value.ToString(), new Font(jo2["fontname"].ToString(), Convert.ToInt16(jo2["fontsize"]), (FontStyle)Convert.ToUInt16(jo2["fontstyle"])), Brushes.Black, Convert.ToUInt16(jo2["left"]), Convert.ToUInt16(jo2["top"]));
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    continue;
+                }
+
+            }
+            JToken jsonimg = jobject["barcodeimg"];
             C_Code128 _Code = new C_Code128();
-            _Code.ValueFont = new Font("宋体", 10);
-            e.Graphics.DrawImage(_Code.GetCodeImage(barcode.Barcode, C_Code128.Encode.Code128C), new Point() { X = 38, Y = 18 });
-
-            //条码左侧和右侧的文字信息
-            string barcodeimage_lefttext = "";
-         
-            if (!string.IsNullOrWhiteSpace(barcode.ISREPRINT)&& barcode.ISREPRINT=="1")
-            {                
-                barcodeimage_lefttext=  DateTime.Now.Month + "/" + DateTime.Now.Day + "\r\n" + DateTime.Now.Hour + ":" + DateTime.Now.Minute+ "\r\n" +" 重";
-            }
-            else
-            {
-                barcodeimage_lefttext= DateTime.Now.Year + "\r\n" + DateTime.Now.Month + "/" + DateTime.Now.Day + "\r\n" + DateTime.Now.Hour + ":" + DateTime.Now.Minute;
-            }
-            string barcodeimage_righttext = barcode.SPECIMENTYPECODE + "\r\n" + barcode.DEPTNAME;
-            e.Graphics.DrawString(barcodeimage_lefttext, new Font("宋体", 8), Brushes.Black, 0, 18);
-            e.Graphics.DrawString(barcodeimage_righttext, new Font("宋体", 8), Brushes.Black, 150, 18);
-
-
-            //添加病人号
-
-            e.Graphics.DrawString(barcode.PATCODE, new Font("宋体", 10, FontStyle.Bold), Brushes.Black, 48, 58);
-
-            //创建项目文本信息
-            char[] sarray = barcode.Items.ToArray();
-            string itemdata = "";
-            string itemdataprint = "";
-            for (int i = 0; i < barcode.Items.Count(); i++)
-            {
-                if ((itemdataprint.Length + 1) % 15 == 0 && i > 0)
-                {
-                    itemdataprint += sarray[i] + "\r\n";
-                    itemdata += sarray[i];
-                }
-                else
-                {
-                    itemdata += sarray[i];
-                    itemdataprint += sarray[i];
-                }
-
-            }
-            e.Graphics.DrawString(itemdataprint, new Font("宋体", 8), Brushes.Black, 0, 78);
-
+            _Code.ValueFont = new Font(jsonimg["fontname"].ToString(), Convert.ToInt16(jsonimg["fontsize"]));
+            e.Graphics.DrawImage(_Code.GetCodeImage(jsondata["Barcode"].ToString(), C_Code128.Encode.Code128C), new Point() { X = jsonimg["left"].Toint(), Y = jsonimg["top"].Toint() });
         }
 
      
@@ -193,7 +180,7 @@ namespace ActiveXTest1
        
         public void GetPrintData(string barcodedata)
         {
-            SaveData = JsonConvert.DeserializeObject<BarCodeInfo>(barcodedata);
+            jsondata= JObject.Parse(barcodedata);            
             m_printDoc.Print();
         }
 

@@ -28,11 +28,10 @@ namespace ActiveXTest1
             
 
             InitializeComponent();
-            
-
+            m_printDoc = new PrintDocument();
             //打印事件
-            m_printDoc.PrintPage += new PrintPageEventHandler(m_printDoc_PrintPage);
-            m_printDoc.EndPrint += new PrintEventHandler(m_printDoc_EndPrintPage);
+            m_printDoc.PrintPage += (m_printDoc_PrintPage);
+            m_printDoc.EndPrint +=(m_printDoc_EndPrintPage);
             m_printDoc.BeginPrint += M_printDoc_BeginPrint;
     }
 
@@ -40,7 +39,7 @@ namespace ActiveXTest1
 
         private void M_printDoc_BeginPrint(object sender, PrintEventArgs e)
         {
-            string jsonfile = System.Environment.CurrentDirectory + "//BarCodeModule.json";
+            string jsonfile = @"C:\Program Files (x86)\my\nykjPrint\BarCodeModule.json";
             using (System.IO.StreamReader file = System.IO.File.OpenText(jsonfile))
             {
 
@@ -51,13 +50,12 @@ namespace ActiveXTest1
 
                 }
             }
-
-            m_printDoc = new PrintDocument();//实例打印文档对象
             //自定义纸张大小
             m_printDoc.DefaultPageSettings.PaperSize = new PaperSize(jsonset["pagename"].ToString()
            , (int)(jsonset["width"].Toint() / 25.4 * 100)
            , (int)(jsonset["height"].Toint() / 25.4 * 100));
-            m_printDoc.PrinterSettings.PrinterName = jsonset["printname"].ToString();
+            string abc = jsonset["printname"].ToString().Replace('|', '\\');
+            m_printDoc.PrinterSettings.PrinterName = abc;
             //自定义图片内容整体上间距/左间距
             m_printDoc.OriginAtMargins = true;
             m_printDoc.DefaultPageSettings.Margins.Top = 0;
@@ -186,7 +184,7 @@ namespace ActiveXTest1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("1233");
         }
        
     }

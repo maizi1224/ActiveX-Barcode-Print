@@ -19,3 +19,13 @@ D:\Desktop\GitClone\ActiveX-Print\ActiveXTest1\obj\Debug\ActiveXTest1.pdb
 D:\Desktop\GitClone\ActiveX-Print\ActiveXTest1\bin\Debug\ActiveXTest1.tlb
 D:\Desktop\GitClone\ActiveX-Print\ActiveXTest1\bin\Debug\Newtonsoft.Json.pdb
 D:\Desktop\GitClone\ActiveX-Print\ActiveXTest1\obj\Debug\ActiveXTest1.csprojResolveAssemblyReference.cache
+D:\Desktop\GitHubProject\ActiveX-Barcode-Print\ActiveXTest1\bin\Debug\ActiveXTest1.dll
+D:\Desktop\GitHubProject\ActiveX-Barcode-Print\ActiveXTest1\bin\Debug\ActiveXTest1.pdb
+D:\Desktop\GitHubProject\ActiveX-Barcode-Print\ActiveXTest1\bin\Debug\ActiveXTest1.tlb
+D:\Desktop\GitHubProject\ActiveX-Barcode-Print\ActiveXTest1\bin\Debug\Newtonsoft.Json.dll
+D:\Desktop\GitHubProject\ActiveX-Barcode-Print\ActiveXTest1\bin\Debug\Newtonsoft.Json.pdb
+D:\Desktop\GitHubProject\ActiveX-Barcode-Print\ActiveXTest1\bin\Debug\Newtonsoft.Json.xml
+D:\Desktop\GitHubProject\ActiveX-Barcode-Print\ActiveXTest1\obj\Debug\ActiveXTest1.Uc.resources
+D:\Desktop\GitHubProject\ActiveX-Barcode-Print\ActiveXTest1\obj\Debug\ActiveXTest1.csproj.GenerateResource.Cache
+D:\Desktop\GitHubProject\ActiveX-Barcode-Print\ActiveXTest1\obj\Debug\ActiveXTest1.dll
+D:\Desktop\GitHubProject\ActiveX-Barcode-Print\ActiveXTest1\obj\Debug\ActiveXTest1.pdb

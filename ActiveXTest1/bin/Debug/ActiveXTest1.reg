@@ -15,13 +15,13 @@ REGEDIT4
 "Class"="ActiveXTest1.BarCodeInfo"
 "Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 "RuntimeVersion"="v4.0.30319"
-"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+"CodeBase"="file:///D:/Desktop/GitHubProject/ActiveX-Barcode-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
 
 [HKEY_CLASSES_ROOT\CLSID\{03E2CBCD-B71F-392C-99F5-6F104326258F}\InprocServer32\1.0.0.0]
 "Class"="ActiveXTest1.BarCodeInfo"
 "Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 "RuntimeVersion"="v4.0.30319"
-"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+"CodeBase"="file:///D:/Desktop/GitHubProject/ActiveX-Barcode-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
 
 [HKEY_CLASSES_ROOT\CLSID\{03E2CBCD-B71F-392C-99F5-6F104326258F}\ProgId]
 @="ActiveXTest1.BarCodeInfo"
@@ -43,13 +43,13 @@ REGEDIT4
 "Class"="ActiveXTest1.C_Code128"
 "Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 "RuntimeVersion"="v4.0.30319"
-"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+"CodeBase"="file:///D:/Desktop/GitHubProject/ActiveX-Barcode-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
 
 [HKEY_CLASSES_ROOT\CLSID\{697A3566-77DF-3158-A0F4-19640386BE5A}\InprocServer32\1.0.0.0]
 "Class"="ActiveXTest1.C_Code128"
 "Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 "RuntimeVersion"="v4.0.30319"
-"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+"CodeBase"="file:///D:/Desktop/GitHubProject/ActiveX-Barcode-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
 
 [HKEY_CLASSES_ROOT\CLSID\{697A3566-77DF-3158-A0F4-19640386BE5A}\ProgId]
 @="ActiveXTest1.C_Code128"
@@ -71,13 +71,13 @@ REGEDIT4
 "Class"="ActiveXTest1.Uc"
 "Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 "RuntimeVersion"="v4.0.30319"
-"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+"CodeBase"="file:///D:/Desktop/GitHubProject/ActiveX-Barcode-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
 
 [HKEY_CLASSES_ROOT\CLSID\{073A987E-2A7C-4874-8BEE-321E04F4E84E}\InprocServer32\1.0.0.0]
 "Class"="ActiveXTest1.Uc"
 "Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 "RuntimeVersion"="v4.0.30319"
-"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+"CodeBase"="file:///D:/Desktop/GitHubProject/ActiveX-Barcode-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
 
 [HKEY_CLASSES_ROOT\CLSID\{073A987E-2A7C-4874-8BEE-321E04F4E84E}\ProgId]
 @="ActiveXTest1.Uc"
@@ -88,4 +88,4 @@ REGEDIT4
 "Class"="ActiveXTest1.C_Code128+Encode"
 "Assembly"="ActiveXTest1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
 "RuntimeVersion"="v4.0.30319"
-"CodeBase"="file:///D:/Desktop/GitClone/ActiveX-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
+"CodeBase"="file:///D:/Desktop/GitHubProject/ActiveX-Barcode-Print/ActiveXTest1/bin/Debug/ActiveXTest1.dll"
